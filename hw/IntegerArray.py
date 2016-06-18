@@ -1,37 +1,25 @@
-# http://interactivepython.org/runestone/static/pythonds/SortSearch/TheMergeSort.html
-def mergeSort(alist):
-    print("Splitting ",alist)
-    if len(alist)>1:
+def inversion_count(alist):
+    if len(alist) > 1:
+        print 'spliting' + alist
         mid = len(alist)//2
-        lefthalf = alist[:mid]
-        righthalf = alist[mid:]
+        first_half = alist[:mid]
+        second_half = alist[mid:]
 
-        mergeSort(lefthalf)
-        mergeSort(righthalf)
+        inversion_count(first_half)
+        inversion_count(second_half)
 
-        i=0
-        j=0
-        k=0
-        while i < len(lefthalf) and j < len(righthalf):
-            if lefthalf[i] < righthalf[j]:
-                alist[k]=lefthalf[i]
-                i=i+1
+        i = 0
+        j = 0
+        k = 0
+
+        while len(first_half) > i and len(second_half) > j:
+            if first_half[i] < second_half[j]:
+                alist[k] = first_half[i]
+                i++
             else:
-                alist[k]=righthalf[j]
-                j=j+1
-            k=k+1
+                alist[k] = second_half[j]
 
-        while i < len(lefthalf):
-            alist[k]=lefthalf[i]
-            i=i+1
-            k=k+1
+                
 
-        while j < len(righthalf):
-            alist[k]=righthalf[j]
-            j=j+1
-            k=k+1
-    print("Merging ",alist)
-
-alist = [54,26,93,17,77,31,44,55,20]
-mergeSort(alist)
-print(alist)
+    else:
+        print 'reached single-item list'
