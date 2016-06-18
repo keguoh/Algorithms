@@ -1,12 +1,14 @@
-def inversion_count(alist, count):
+count = 0
+def count_inversion_using_mergesort(alist):
+    global count
     if len(alist) > 1:
         #print 'spliting %s' % alist
         mid = len(alist)//2
         first_half = alist[:mid]
         second_half = alist[mid:]
 
-        inversion_count(first_half, count)
-        inversion_count(second_half, count)
+        count_inversion_using_mergesort(first_half)
+        count_inversion_using_mergesort(second_half)
 
         i = 0
         j = 0
@@ -37,8 +39,10 @@ def inversion_count(alist, count):
         #print 'single-item list %s reached' % alist
 
 #A = [1,3,5,2,4,6]
-A = [1,5,3,2,4]
-print A
-count = 0
-inversion_count(A, count)
+#A = [1,5,3,2,4]
+A = []
+integerArray = open(integerArray.txt)
+for i in range(10000):
+    A.append = integerArray.read()
+count_inversion_using_mergesort(A)
 print 'list becomes %s and count is %s' % (A, count)
