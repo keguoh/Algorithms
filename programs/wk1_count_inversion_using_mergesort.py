@@ -21,7 +21,7 @@ def count_inversion_using_mergesort(alist):
             else:
                 alist[k] = second_half[j]
                 count += len(first_half) - i
-                print "Now we have %s inversions" % count
+                #print "Now we have %s inversions" % count
                 j = j + 1
             k = k + 1
 
@@ -34,15 +34,15 @@ def count_inversion_using_mergesort(alist):
             alist[k] = second_half[j]
             j = j + 1
             k = k + 1
-        print (alist, ' merged')
+        #print (alist, ' merged')
     #else:
         #print 'single-item list %s reached' % alist
 
 #A = [1,3,5,2,4,6]
 #A = [1,5,3,2,4]
 A = []
-integerArray = open(integerArray.txt)
-for i in range(10000):
-    A.append = integerArray.read()
+Array = open('integerArray.txt')
+for i in range(100000):
+    A.append(int(Array.readline()))
 count_inversion_using_mergesort(A)
-print 'list becomes %s and count is %s' % (A, count)
+print 'list becomes %s and count is %s' % (A[:20], count)
