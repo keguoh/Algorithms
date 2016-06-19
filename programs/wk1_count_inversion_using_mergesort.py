@@ -52,6 +52,9 @@ count_inversion_using_mergesort(A)
 print 'the first 20 elements of list become %s and total inversion count is %s' % (A[:20], count)
 
 
+# do not know how to add count as a parameter instead of global var
+
+
 #count = [0]
 #def count_inversion_using_mergesort(alist, count):
 #    if len(alist) > 1:
