@@ -4,7 +4,7 @@ count = 0
 
 def merge_sort(li):
     print ('spliting', li)
-    if len(li) < 2: return li    #end of the reccursion
+    if len(li) < 2: return li    #end of the recursion
     m = len(li) / 2 
     return merge(merge_sort(li[:m]), merge_sort(li[m:])) 
 
