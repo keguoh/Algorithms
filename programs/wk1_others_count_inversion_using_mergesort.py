@@ -1,12 +1,15 @@
+# http://codereview.stackexchange.com/questions/12922/inversion-count-using-merge-sort
+
 count = 0
 
 def merge_sort(li):
-
-    if len(li) < 2: return li 
+    print ('spliting', li)
+    if len(li) < 2: return li    #end of the reccursion
     m = len(li) / 2 
     return merge(merge_sort(li[:m]), merge_sort(li[m:])) 
 
 def merge(l, r):
+    print "merging %s and %s" % (l ,r)
     global count
     result = [] 
     i = j = 0 
@@ -22,6 +25,6 @@ def merge(l, r):
     result.extend(r[j:]) 
     return result
 
-unsorted = [10,2,3,22,33,7,4,1,2]
+unsorted = [1,5,3,2,4]
 print merge_sort(unsorted)
 print count

@@ -1,3 +1,7 @@
+"""
+This is for programming assignment of week 1
+"""
+
 count = 0
 def count_inversion_using_mergesort(alist):
     global count
@@ -45,4 +49,4 @@ Array = open('integerArray.txt')
 for i in range(100000):
     A.append(int(Array.readline()))
 count_inversion_using_mergesort(A)
-print 'list becomes %s and count is %s' % (A[:20], count)
+print 'the first 20 elements of list become %s and total inversion count is %s' % (A[:20], count)
