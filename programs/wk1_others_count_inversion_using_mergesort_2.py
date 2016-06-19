@@ -1,6 +1,5 @@
 #http://codereview.stackexchange.com/questions/12922/inversion-count-using-merge-sort
 
-count = 0
 
 def merge_sort(li, c):
     print ('spliting', li)
