@@ -44,7 +44,7 @@ def count_inversion_using_mergesort(alist, count):
 #A = [1,3,5,2,4,6]
 #A = [1,5,3,2,4]
 A = []
-Array = open('integerArray.txt')
+Array = open('IntegerArray.txt')
 for i in range(100000):
     A.append(int(Array.readline()))
 count = [0]
