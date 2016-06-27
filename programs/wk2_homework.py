@@ -23,9 +23,9 @@ def quick_sort_first(alist, count):
         # print "The list becomes %s" % alist
 
 # A = open("wk2_QuickSort.txt")
-A = open("wk2_test1000.txt")
+A = open("wk2_test100.txt")
 alist = []
-for i in xrange(1000):
+for i in xrange(100):
     alist.append(int(A.readline()))
 A.close()
 count = [0]
@@ -39,28 +39,29 @@ print "\n\n"
 # problem 2
 def quick_sort_last(alist, count):
     if len(alist) >= 2:
-        pivot = alist[-1]
+    	(alist[0], alist[-1]) = (alist[-1], alist[0])
+        pivot = alist[0]
         count[0] += len(alist) - 1
-        i, j = 0, 0
-        while j < len(alist) - 1:
+        i, j = 1, 1
+        while j < len(alist):
             if alist[j] < pivot:
                 #print "exchanging %s at %s with %s at %s" % (alist[j], j, alist[i], i)
                 (alist[j], alist[i]) = (alist[i], alist[j])
                 i += 1
             j += 1
-        (alist[-1], alist[i]) = (alist[i], alist[-1])
+        (alist[0], alist[i-1]) = (alist[i-1], alist[0])
         # print "the list becomes %s with pivot %s after %s comparisions" % (alist, pivot, count[0])
-        left = alist[:i]
-        quick_sort_last(left, count)
-        alist[:i] = left
-        right = alist[(i+1):]
-        quick_sort_last(right, count)
-        alist[(i+1):] = right
+        left = alist[:(i-1)]
+        quick_sort_first(left, count)
+        alist[:(i-1)] = left
+        right = alist[i:]
+        quick_sort_first(right, count)
+        alist[i:] = right
         # print "The list becomes %s" % alist
 # A = open("wk2_QuickSort.txt")
-A = open("wk2_test1000.txt")
+A = open("wk2_test100.txt")
 alist = []
-for i in xrange(1000):
+for i in xrange(100):
     alist.append(int(A.readline()))
 A.close()
 
@@ -69,6 +70,28 @@ quick_sort_last(alist, count)
 print count
 print alist[:20]
 print "\n\n"
+
+# def quick_sort_last3(alist, count):
+#     if len(alist) >= 2:
+#         pivot = alist[-1]
+#         count[0] += len(alist) - 1
+#         i, j = 0, 0
+#         while j < len(alist) - 1:
+#             if alist[j] < pivot:
+#                 #print "exchanging %s at %s with %s at %s" % (alist[j], j, alist[i], i)
+#                 (alist[j], alist[i]) = (alist[i], alist[j])
+#                 i += 1
+#             j += 1
+#         (alist[-1], alist[i]) = (alist[i], alist[-1])
+#         print "the list becomes %s with pivot %s after %s comparisions" % (alist, pivot, count[0])
+#         left = alist[:i]
+#         quick_sort_last3(left, count)
+#         alist[:i] = left
+#         right = alist[(i+1):]
+#         quick_sort_last3(right, count)
+#         alist[(i+1):] = right
+#         # print "The list becomes %s" % alist
+
 
 # Another way
 # def quick_sort_last2(alist, count):
@@ -201,9 +224,9 @@ def quick_sort_p3(alist, count):
 		alist[(indx+1):] = right
 
 # A = open("wk2_QuickSort.txt")
-A = open("wk2_test1000.txt")
+A = open("wk2_test100.txt")
 alist = []
-for i in xrange(1000):
+for i in xrange(100):
     alist.append(int(A.readline()))
 A.close()
 count = [0]
