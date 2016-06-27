@@ -135,26 +135,34 @@ def quicksort_median(array, leftindex, rightindex):
 
          quicksort_median(array, newpivotindex + 1, rightindex)
 
+# f = open("wk2_QuickSort.txt", "r")
+# intarray = []
+# for line in f:
+#     intarray.append(int(line))
+# f.close()
+
+# firstcomparison = 0
+# quick_sort1(intarray, 0, len(intarray))
+# print firstcomparison
+
+# f = open("wk2_QuickSort.txt", "r")
+# intarray = []
+# for line in f:
+#     intarray.append(int(line))
+# f.close()
+
+# lastcomparison = 0
+# quicksort_last(intarray, 0, len(intarray))
+# print lastcomparison
 
 
-f = open("wk2_test1000.txt", "r")
-intarray = []
-for line in f:
-    intarray.append(int(line))
-f.close()
+# f = open("wk2_QuickSort.txt", "r")
+# intarray = []
+# for line in f:
+#     intarray.append(int(line))
+# f.close()
 
-lastcomparison = 0
-quicksort_median(intarray, 0, len(intarray))
-print lastcomparison
-
-
-f = open("wk2_test1000.txt", "r")
-intarray = []
-for line in f:
-    intarray.append(int(line))
-f.close()
-
-#test on an array of length 10000
-mediancomparison = 0
-quicksort_median(intarray, 0, len(intarray))
-print mediancomparison
+# #test on an array of length 10000
+# mediancomparison = 0
+# quicksort_median(intarray, 0, len(intarray))
+# print mediancomparison
