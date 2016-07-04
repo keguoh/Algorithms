@@ -1,7 +1,7 @@
 # https://github.com/smutneja03/Coursera-Algorithms_Part1/blob/master/Week3/karger.py
 
 import random
- 
+
 file_handle = open("wk3_kargerMinCut.txt", "r")
 graph = {}
 for line in file_handle:
@@ -11,7 +11,7 @@ for line in file_handle:
         edges.append(int(edge))
     graph[node] = edges
 file_handle.close()
- 
+
 def karger(graph):
     while len(graph) > 2:
 #final step when only two vertices are left in the graph
@@ -20,14 +20,14 @@ def karger(graph):
         start = random.choice(graph.keys())
         finish = random.choice(graph[start])
 #randomly choosing a edge that will be collapsed to nly the start node
- 
+
     #Adding the edges from the absorbed node:
         for edge in graph[finish]:
             if edge != start:
                 # this stops us from making a self-loop
                 graph[start].append(edge)
-                #this will add the edges of the collapsed node to the start  
-               
+                #this will add the edges of the collapsed node to the start
+
     ## Deleting the references to the absorbed node and changing them to the source node:
         for edge in graph[finish]:
             graph[edge].remove(finish)
