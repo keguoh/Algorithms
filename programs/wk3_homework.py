@@ -15,5 +15,26 @@ for line in file:
     for edge in line.split()[1:]:
         edges.append(int(edge))
     graph[vertex] = edges
+file.close()
 
+def hw3(graph):
+    # print "The initial graph is %s" % graph
+    while len(graph) > 2:
+        start = random.choice(graph.keys())
+        # print "start is %s" % start
+        end = random.choice(graph[start])
+        # print "end is %s" % end
+        for node in graph[end]:
+            if node != start: 
+                graph[start].append(node)
+        for node in graph[end]:
+            graph[node].remove(end)
+            if node != start: 
+                graph[node].append(start)
+        del graph[end]
+        # print "graph becomes %s" % graph
 
+hw3(graph)
+print graph
+for i in graph:
+    print len(graph[i])
