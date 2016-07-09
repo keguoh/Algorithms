@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 # https://github.com/smutneja03/Coursera-Algorithms_Part1/blob/master/Week3/karger.py
->>>>>>> 2532d6f9ae5f9c027b6042165f2ee21e71e7c3a8
 
 import random
 
@@ -41,9 +38,4 @@ def karger(graph):
     print graph
     for i in graph:
         print len(graph[i])
-
-<<<<<<< HEAD
 karger(graph)
-=======
-karger(graph)
->>>>>>> 2532d6f9ae5f9c027b6042165f2ee21e71e7c3a8

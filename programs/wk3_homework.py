@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Download the following text file:
 
 # kargerMinCut.txt
@@ -78,5 +77,4 @@ def hw3(graph):
 hw3(graph)
 print graph
 for i in graph:
->>>>>>> 2532d6f9ae5f9c027b6042165f2ee21e71e7c3a8
     print len(graph[i])
