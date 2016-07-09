@@ -32,5 +32,3 @@ alist = [3, 2, 8, 5, 1, 4, 7, 6]
 # alist = [1, 3, 5, 2, 4, 6]
 rand_seletion(alist, 7)
 print alist
-
-
