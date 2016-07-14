@@ -2,7 +2,9 @@
 
 #!/usr/bin/env python
 import sys
-sys.setrecursionlimit(50000)
+sys.setrecursionlimit(5000)
+
+
 N = 875714
 G={}
 #graph with the directions as per the input file
@@ -43,7 +45,7 @@ def dfs_loop(G):
     t=0 #number of nodes processed so far
     s=0 #current source vertex
     i=N
-    for i in range(1,N+1):
+    for i in reversed(range(1,N+1)):                #ADDED BY KEGUO
 #initially setting all to be none 
         visited[i]=0
         finish[i]=0
