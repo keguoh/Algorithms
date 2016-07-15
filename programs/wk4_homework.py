@@ -9,6 +9,9 @@ WARNING: This is the most challenging programming assignment of the course. Beca
 """
 
 
+import time
+time1 = time.time()
+
 fin=open("wk4_SCC.txt", "r")
 # fin=open('wk4_test1.txt', 'r')
 # fin=open('wk4_test2.txt', 'r')
@@ -107,7 +110,7 @@ def dfs_loop(G):
     while(i > 0):
         if(visited[i] == 0):
             s = i
-            print '\nthe leader is %s' % i
+            # print '\nthe leader is %s' % i
             dfs(G, i)
         i -= 1
 
@@ -146,3 +149,5 @@ stat.append(N-pre)
 L = sorted(stat)
 L.reverse()
 print(L[0:10])
+
+print "The simulation takes %0.2f min" % ((time.time()-time1)/60)
