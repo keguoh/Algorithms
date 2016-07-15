@@ -45,7 +45,7 @@ for line in fin:
 fin.close()
 
 # print G[N]
-print 'the Grev is %s\n' % Grev
+# print 'the Grev is %s\n' % Grev
 
 #global variables to keep record
 visited = {}
@@ -71,16 +71,16 @@ def dfs(G, i):
 				t += 1
 				finish[u] = t
 				stack.pop()
-				print 'zero outdegree vertex %s has been reached and its finish is %s' % (u, t)
+				# print 'zero outdegree vertex %s has been reached and its finish is %s' % (u, t)
 			else:
 				for w in G[u]:
 					if visited[w] == 0 and w not in stack:
 						stack.append(w)
-						print "%s's unvisited neighbor %s has been reached, and stack is %s" % (u, w, stack)
+						# print "%s's unvisited neighbor %s has been reached, and stack is %s" % (u, w, stack)
 		else:
 			t += 1
 			finish[u] = t 
-			print 'visited %s has been reached and its finish is %s' % (u, t)
+			# print 'visited %s has been reached and its finish is %s' % (u, t)
 			stack.pop()
 	visited[i] = 1
 
@@ -117,8 +117,9 @@ dfs_loop(Grev)
 #THE FIRST LOOP ON REVERSE GRAPH
 #done with the second step of the three steps algorithm
 # construct new graph
-print 'the finish after the first pass is %s\n' % finish
+# print 'the finish after the first pass is %s\n' % finish
 # print 'the leader is %s' % leader
+print '\nFIRST PASS FINISHED\n'
 newGraph = {}
 for i in range(1, N+1):
     temp=[]
@@ -127,12 +128,12 @@ for i in range(1, N+1):
 #to keep record of the edges of the actual nodes in the correct order
     newGraph[finish[i]] = temp
 
-print 'the newGraph is %s\n' % newGraph
+# print 'the newGraph is %s\n' % newGraph
 
 dfs_loop(newGraph) #THE SECOND LOOP 
 #done with the third step of the three steps algorithm
 
-print 'the leader is '
+# print 'the leader is %s' % leader
     # statistics
 lst = sorted(leader.values())
 stat = []
