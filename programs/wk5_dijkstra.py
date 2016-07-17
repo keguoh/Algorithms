@@ -65,4 +65,4 @@ Dijk(G, 1)
 
 for x in [7,37,59,82,99,115,133,165,188,197]:
 	print A[x]
-print 'the process takes %s mins' % ((time.time()-time1)/60)
+print 'the process takes %s mins' % ((time.time() - time1) / 60)
